@@ -43,7 +43,7 @@ module Quickbooks
 
       def attributes
         attributes = self.class.attribute_names.map do |name|
-          value = public_send(name)
+          value = send(name)
           value = value.attributes if value.respond_to?(:attributes)
           [name, value]
         end
