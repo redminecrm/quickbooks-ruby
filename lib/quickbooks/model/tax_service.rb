@@ -7,7 +7,7 @@ module Quickbooks
       xml_accessor :tax_code, :from => "TaxCode"
       xml_accessor :tax_rate_details, :from => 'TaxRateDetails', :as => [TaxRateDetailLine]
 
-      validates :tax_code, presence: true, length: { maximum: 100 }
+      validates :tax_code, :presence => true, :length => { :maximum => 100 }
 
       validate :check_details_item
 

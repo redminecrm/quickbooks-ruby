@@ -19,8 +19,8 @@ module Quickbooks
       PREFERENCE_SECTIONS = {
         :accounting_info      => %w(TrackDepartments DepartmentTerminology ClassTrackingPerTxnLine? ClassTrackingPerTxn? CustomerTerminology),
         :product_and_services => %w(ForSales? ForPurchase? QuantityWithPriceAndRate? QuantityOnHand?),
-        :sales_forms          => %w(CustomTxnNumbers? AllowDeposit? AllowDiscount? DefaultDiscountAccount? AllowEstimates? EstimateMessage? 
-                                                ETransactionEnabledStatus? ETransactionAttachPDF? ETransactionPaymentEnabled? IPNSupportEnabled? 
+        :sales_forms          => %w(CustomTxnNumbers? AllowDeposit? AllowDiscount? DefaultDiscountAccount? AllowEstimates? EstimateMessage?
+                                                ETransactionEnabledStatus? ETransactionAttachPDF? ETransactionPaymentEnabled? IPNSupportEnabled?
                                                 AllowServiceDate? AllowShipping? DefaultShippingAccount? DefaultTerms DefaultCustomerMessage),
         :vendor_and_purchase  => %w(TrackingByCustomer? BillableExpenseTracking? DefaultTerms? DefaultMarkup? POCustomField),
         :time_tracking        => %w(UseServices? BillCustomers? ShowBillRateToAll WorkWeekStartDate MarkTimeEntiresBillable?),
@@ -40,7 +40,7 @@ module Quickbooks
         end
       end
 
-      xml_reader :email_messages, :from => "EmailMessagesPrefs", as: EmailMessageContainer
+      xml_reader :email_messages, :from => "EmailMessagesPrefs", :as => EmailMessageContainer
 
       xml_reader :other_prefs, :from => "OtherPrefs/NameValue", :as => { :key => "Name", :value => "Value" }
     end

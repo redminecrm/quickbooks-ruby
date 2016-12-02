@@ -8,6 +8,6 @@ module GlobalTaxCalculation
 
   included do
     xml_accessor :global_tax_calculation, :from => 'GlobalTaxCalculation'
-    validates_inclusion_of :global_tax_calculation, :in => GLOBAL_TAX_CALCULATION, allow_blank: true
+    validates_inclusion_of :global_tax_calculation, :in => GLOBAL_TAX_CALCULATION, :allow_blank => true
   end
 end

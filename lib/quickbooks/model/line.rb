@@ -86,8 +86,8 @@ module Quickbooks
       end
 
       def add_linked_transaction(txn_id, txn_type)
-        self.linked_transactions << LinkedTransaction.new(txn_id: txn_id,
-                                                          txn_type: txn_type)
+        self.linked_transactions << LinkedTransaction.new(:txn_id => txn_id,
+                                                          :txn_type => txn_type)
       end
     end
   end

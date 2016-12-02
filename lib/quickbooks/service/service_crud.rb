@@ -20,7 +20,7 @@ module Quickbooks
         per_page = options.delete(:per_page) || 1_000
         begin
           page += 1
-          results = query(object_query, page: page, per_page: per_page)
+          results = query(object_query, :page => page, :per_page => per_page)
           yield results if results.count > 0
         end until results.count < per_page
       end

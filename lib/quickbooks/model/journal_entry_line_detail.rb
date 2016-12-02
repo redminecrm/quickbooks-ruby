@@ -18,7 +18,7 @@ module Quickbooks
       reference_setters :account_ref, :class_ref, :department_ref, :tax_code_ref
 
       validates_length_of :description, :maximum => 4000
-      validates_numericality_of :tax_amount, allow_nil: true, greater_than_or_equal_to:0.0, less_than_or_equal_to:999999999.0
+      validates_numericality_of :tax_amount, :allow_nil => true, :greater_than_or_equal_to => 0.0, :less_than_or_equal_to => 999999999.0
       validate :posting_type_is_valid
       validate :billable_status_is_valid
       validate :journal_line_entry_tax
